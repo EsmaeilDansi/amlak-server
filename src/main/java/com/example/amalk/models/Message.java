@@ -25,6 +25,8 @@ public class Message {
 
     private String location;
 
+    private  int measure;
+
     private String type;
 
     public String getType() {
@@ -39,7 +41,22 @@ public class Message {
 
     }
 
-    public Message(String id, String caption, String file_uuid, String owner_id, int create_time, int value, String location, String type) {
+    @Override
+    public String toString() {
+        return "Message{" +
+                "id='" + id + '\'' +
+                ", caption='" + caption + '\'' +
+                ", file_uuid='" + file_uuid + '\'' +
+                ", owner_id='" + owner_id + '\'' +
+                ", create_time=" + create_time +
+                ", value=" + value +
+                ", location='" + location + '\'' +
+                ", measure=" + measure +
+                ", type='" + type + '\'' +
+                '}';
+    }
+
+    public Message(String id, String caption, String file_uuid, String owner_id, int create_time, int value, String location, int measure, String type) {
         this.id = id;
         this.caption = caption;
         this.file_uuid = file_uuid;
@@ -47,31 +64,16 @@ public class Message {
         this.create_time = create_time;
         this.value = value;
         this.location = location;
+        this.measure = measure;
         this.type = type;
     }
 
-    public String  getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(String  id) {
+    public void setId(String id) {
         this.id = id;
-    }
-
-    public int getValue() {
-        return value;
-    }
-
-    public void setValue(int value) {
-        this.value = value;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
     }
 
     public String getCaption() {
@@ -106,18 +108,27 @@ public class Message {
         this.create_time = create_time;
     }
 
+    public int getValue() {
+        return value;
+    }
 
-    @Override
-    public String toString() {
-        return "Message{" +
-                "id=" + id +
-                ", caption='" + caption + '\'' +
-                ", file_uuid='" + file_uuid + '\'' +
-                ", owner_id='" + owner_id + '\'' +
-                ", create_time=" + create_time +
-                ", value=" + value +
-                ", location='" + location + '\'' +
-                ", type='" + type + '\'' +
-                '}';
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public int getMeasure() {
+        return measure;
+    }
+
+    public void setMeasure(int measure) {
+        this.measure = measure;
     }
 }
